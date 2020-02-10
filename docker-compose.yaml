@@ -1,0 +1,13 @@
+version: '2.3'
+services:
+  research:
+    container_name: one_to_many_model
+    user: "${UID}:${GID}"
+    build: .
+    volumes:
+      - ./:/mnt
+    ports:
+      - "8983:8888"
+    tty: true
+    command: /bin/bash
+    runtime: nvidia
